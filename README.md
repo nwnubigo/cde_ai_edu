@@ -36,6 +36,10 @@ python3 -m http.server 8000
 # → http://localhost:8000
 ```
 
+## 현재 배포 주소
+
+**https://sosangongin-ai-edu.netlify.app** (Netlify, 프로젝트명 `sosangongin-ai-edu`)
+
 ## 배포 방법 (무료)
 
 | 방법 | 절차 |
@@ -53,7 +57,7 @@ python3 -m http.server 8000
 | `010-8366-8536` | 문의 전화번호 | index.html · privacy.html · 404.html · `main.js`의 `PHONE` 상수 |
 | `su000@hanmail.net` | 문의 이메일 | index.html · privacy.html |
 | `신청 시 안내` | 수강료가 확정되면 금액으로 | index.html 교육 안내 표 |
-| `xn--ai-he2iv73b8zdy2gupbu8y5pq9oj55i.xn--ok0b850bc9gv3i.com` | 실제 배포 도메인 (한글 도메인의 퓨니코드) | index.html의 canonical·og:url·og:image, robots.txt, sitemap.xml |
+| `sosangongin-ai-edu.netlify.app` | 한글 도메인 연결 후 그 주소로 (퓨니코드: `xn--ai-he2iv73b8zdy2gupbu8y5pq9oj55i.xn--ok0b850bc9gv3i.com`) | index.html의 canonical·og:url·og:image, robots.txt, sitemap.xml |
 | `<div class="hero-media">` 안의 `<img>` | 유튜브 업로드 후 `<iframe>` 임베드로 교체 가능 | index.html |
 
 > 카카오톡 공유 미리보기(og:image)는 **절대 주소**여야 보입니다. 도메인을 연결한 뒤 반드시 위 주소를 실제 도메인으로 바꿔주세요.
