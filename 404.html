@@ -5,23 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>페이지를 찾을 수 없습니다 | 소상공인 AI 홍보마케팅 교육</title>
 <meta name="robots" content="noindex">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700&display=swap">
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/css/style.css">
+<!-- 하위 경로(/cde_ai_edu/)에서도 깨지지 않도록 스타일을 이 파일에 직접 넣었습니다. -->
+<style>
+  :root{--bg:#F6F4EE;--ink:#1E2433;--ink2:#4B5262;--line:#DCDED6;--accent:#FFD84D}
+  @media (prefers-color-scheme:dark){:root{--bg:#141822;--ink:#EEF0F4;--ink2:#C3C8D3;--line:#2E3547}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-size:18px;line-height:1.7;
+    font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+    display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px}
+  h1{font-size:clamp(28px,6vw,44px);margin:0 0 14px;line-height:1.25}
+  p{margin:0;color:var(--ink2)}
+  .cta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
+  a{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 26px;
+    border-radius:14px;font-weight:700;text-decoration:none;border:2px solid transparent}
+  .primary{background:var(--accent);color:#1E2433}
+  .ghost{border-color:var(--line);color:var(--ink)}
+</style>
 </head>
 <body>
 <main>
-<section class="err-page">
-  <div class="wrap narrow">
-    <h1>찾으시는 쪽이 없네요</h1>
-    <p class="lead" style="margin:16px auto 0">주소가 바뀌었거나 잘못 입력하셨을 수 있습니다.<br>아래 버튼으로 교육 안내 페이지로 이동해 주세요.</p>
-    <div class="cta" style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px">
-      <a class="btn btn-primary" href="/">교육 안내 보기</a>
-      <a class="btn btn-ghost" href="tel:010-8366-8536">전화 문의</a>
-    </div>
+  <h1>찾으시는 쪽이 없네요</h1>
+  <p>주소가 바뀌었거나 잘못 입력하셨을 수 있습니다.<br>아래 버튼으로 교육 안내 페이지로 이동해 주세요.</p>
+  <div class="cta">
+    <a class="primary" href="https://nwnubigo.github.io/cde_ai_edu/">교육 안내 보기</a>
+    <a class="ghost" href="tel:010-8366-8536">전화 문의</a>
   </div>
-</section>
 </main>
 </body>
 </html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sosangongin-ai-edu.netlify.app/sitemap.xml
+Sitemap: https://nwnubigo.github.io/cde_ai_edu/sitemap.xml

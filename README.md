@@ -38,7 +38,13 @@ python3 -m http.server 8000
 
 ## 현재 배포 주소
 
-**https://sosangongin-ai-edu.netlify.app** (Netlify, 프로젝트명 `sosangongin-ai-edu`)
+**https://nwnubigo.github.io/cde_ai_edu/**
+
+GitHub Pages로 자동 배포됩니다. 이 브랜치에 push하면 `.github/workflows/deploy-pages.yml`이
+돌면서 몇 분 안에 사이트에 반영됩니다. 별도 조작은 필요 없습니다.
+
+Netlify 프로젝트(`sosangongin-ai-edu`)도 미리 만들어 뒀습니다. 그쪽을 쓰시려면
+Netlify에서 이 저장소를 연결(Import from GitHub)하면 `netlify.toml` 설정대로 배포됩니다.
 
 ## 배포 방법 (무료)
 
@@ -57,7 +63,7 @@ python3 -m http.server 8000
 | `010-8366-8536` | 문의 전화번호 | index.html · privacy.html · 404.html · `main.js`의 `PHONE` 상수 |
 | `su000@hanmail.net` | 문의 이메일 | index.html · privacy.html |
 | `신청 시 안내` | 수강료가 확정되면 금액으로 | index.html 교육 안내 표 |
-| `sosangongin-ai-edu.netlify.app` | 한글 도메인 연결 후 그 주소로 (퓨니코드: `xn--ai-he2iv73b8zdy2gupbu8y5pq9oj55i.xn--ok0b850bc9gv3i.com`) | index.html의 canonical·og:url·og:image, robots.txt, sitemap.xml |
+| `nwnubigo.github.io/cde_ai_edu` | 한글 도메인 연결 후 그 주소로 (퓨니코드: `xn--ai-he2iv73b8zdy2gupbu8y5pq9oj55i.xn--ok0b850bc9gv3i.com`) | index.html의 canonical·og:url·og:image, robots.txt, sitemap.xml, 404.html |
 | `<div class="hero-media">` 안의 `<img>` | 유튜브 업로드 후 `<iframe>` 임베드로 교체 가능 | index.html |
 
 > 카카오톡 공유 미리보기(og:image)는 **절대 주소**여야 보입니다. 도메인을 연결한 뒤 반드시 위 주소를 실제 도메인으로 바꿔주세요.
