@@ -40,22 +40,18 @@ python3 -m http.server 8000
 
 **https://nwnubigo.github.io/cde_ai_edu/**
 
-GitHub Pages로 자동 배포됩니다. 이 브랜치에 push하면 `.github/workflows/deploy-pages.yml`이
-돌면서 몇 분 안에 사이트에 반영됩니다.
+GitHub Pages로 **자동 배포**됩니다. 이 브랜치에 push하면
+`.github/workflows/sync-gh-pages.yml`이 내용을 `gh-pages` 브랜치로 복사하고,
+GitHub Pages가 그 브랜치를 받아 1~2분 안에 사이트에 반영합니다. 별도 조작은 없습니다.
 
-### 처음 한 번만 해주실 설정
+배포 구조:
 
-GitHub 보안 정책상 Pages 기능은 워크플로가 스스로 켤 수 없어, 저장소 주인이 한 번 켜주셔야 합니다.
-
-1. https://github.com/nwnubigo/cde_ai_edu/settings/pages 접속
-2. **Build and deployment → Source** 를 **GitHub Actions** 로 선택
-
-이후에는 push할 때마다 자동 배포됩니다. (Actions 탭에서 "Deploy to GitHub Pages" 워크플로를
-Run workflow로 한 번 돌리면 즉시 반영됩니다.)
-
-Source를 **Deploy from a branch** (브랜치 `claude/small-business-ai-education-homepage-avxfkn`,
-폴더 `/ (root)`)로 골라도 동작합니다. 그 경우 워크플로는 필요 없으니
-`.github/workflows/deploy-pages.yml`을 지우시면 됩니다.
+```
+작업 브랜치에 push
+   → Sync gh-pages 워크플로 실행
+   → gh-pages 브랜치 갱신
+   → GitHub Pages 빌드 → https://nwnubigo.github.io/cde_ai_edu/
+```
 
 Netlify 프로젝트(`sosangongin-ai-edu`)도 미리 만들어 뒀습니다. 그쪽을 쓰시려면
 Netlify에서 이 저장소를 연결(Import from GitHub)하면 `netlify.toml` 설정대로 배포됩니다.

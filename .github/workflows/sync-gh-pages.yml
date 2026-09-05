@@ -1,0 +1,22 @@
+# 작업 브랜치에 push하면 gh-pages 브랜치로 그대로 복사합니다.
+# GitHub Pages의 Source가 "Deploy from a branch → gh-pages"일 때 자동 배포가 됩니다.
+name: Sync gh-pages
+
+on:
+  push:
+    branches: [claude/small-business-ai-education-homepage-avxfkn]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: gh-pages 브랜치로 복사
+        run: git push origin HEAD:gh-pages --force
