@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소상공인 AI 홍보마케팅 교육 | 남원AI연구회 · 강사 조수영</title>
 <meta name="description" content="이론 말고 실습으로, 배운 그날 바로 우리 가게에 쓰는 소상공인 AI 홍보마케팅 교육. 2일 4시간 · 브레이크타임 진행 · 20명 이내 · 1인 1실습 · 노트북 지원. 남원AI연구회 강사 조수영.">
 <meta name="theme-color" content="#FFD84D">
 <meta property="og:title" content="요즘 잘되는 가게, 다 이걸 씁니다 — 소상공인 AI 홍보마케팅 교육">
 <meta property="og:description" content="이론 말고 실습으로, 배운 그날 바로 우리 가게에 씁니다. 2일 4시간 · 브레이크타임 · 1인 1실습">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFD84D'/%3E%3Ctext x='32' y='44' font-size='34' font-family='sans-serif' font-weight='900' text-anchor='middle' fill='%231E2433'%3EAI%3C/text%3E%3C/svg%3E">
-<title>소상공인 AI 홍보마케팅 교육</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNGRkQ4NEQiLz48dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtc2l6ZT0iMzQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iOTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMUUyNDMzIj5BSTwvdGV4dD48L3N2Zz4=">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700&display=swap">
@@ -305,10 +305,17 @@ footer a:hover{color:var(--ink)}
 .doc .back{display:inline-block;margin-top:36px}
 .err-page{text-align:center;padding:100px 0}
 
+/* 카카오톡 ID */
+.kakao{border-top:1px solid var(--line);padding-top:16px;display:grid;gap:8px}
+.kakao-lbl{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.kakao-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.kakao-row b{font-family:var(--display);font-size:26px;font-weight:400;line-height:1.1;letter-spacing:.01em}
+.kakao-row .btn{min-height:44px;padding:0 16px;font-size:15px;width:auto;flex:none}
+.kakao .help{margin-top:-2px}
+
 </style>
 </head>
 <body>
-
 
 <a class="skip" href="#top">본문 바로가기</a>
 
@@ -586,6 +593,14 @@ footer a:hover{color:var(--ink)}
         <p>강사 조수영에게 바로 연결됩니다. 영업 중이시면 문자 남겨주세요. 브레이크타임에 회신드립니다.</p>
         <a class="btn btn-ghost" href="sms:010-8366-8536?body=소상공인 AI 교육 문의드립니다.">문자 보내기</a>
         <a class="btn btn-ghost" href="mailto:su000@hanmail.net?subject=소상공인 AI 홍보마케팅 교육 문의">이메일 보내기</a>
+        <div class="kakao">
+          <span class="kakao-lbl">카카오톡 ID</span>
+          <div class="kakao-row">
+            <b id="kakaoId">su000000</b>
+            <button class="btn btn-ghost" type="button" id="kakaoBtn">ID 복사</button>
+          </div>
+          <p class="help">카카오톡 → 친구 추가 → <b>ID로 추가</b>에서 검색해 주세요.</p>
+        </div>
         <p class="help">교육이 끝난 뒤에도 단톡방에서 계속 질문하실 수 있습니다.</p>
       </aside>
     </div>
@@ -643,6 +658,7 @@ footer a:hover{color:var(--ink)}
     <ul>
       <li>담당: 남원AI연구회 조수영</li>
       <li>전화: <a href="tel:010-8366-8536">010-8366-8536</a></li>
+      <li>카카오톡 ID: su000000</li>
       <li>이메일: <a href="mailto:su000@hanmail.net">su000@hanmail.net</a></li>
     </ul>
 
@@ -654,7 +670,7 @@ footer a:hover{color:var(--ink)}
 <footer>
   <div class="wrap">
     <div>남원AI연구회 · 강사 조수영 · 전북 남원시</div>
-    <div>문의 <a href="tel:010-8366-8536">010-8366-8536</a> · <a href="mailto:su000@hanmail.net">su000@hanmail.net</a> · <a href="#privacy">개인정보처리방침</a></div>
+    <div>문의 <a href="tel:010-8366-8536">010-8366-8536</a> · 카톡 ID su000000 · <a href="mailto:su000@hanmail.net">su000@hanmail.net</a> · <a href="#privacy">개인정보처리방침</a></div>
   </div>
 </footer>
 
@@ -728,6 +744,14 @@ footer a:hover{color:var(--ink)}
       } else {
         copyText(data.url, shareBtn, '주소가 복사됐습니다', '사장님께 알리기');
       }
+    });
+  }
+
+  /* ---------- 카카오톡 ID 복사 ---------- */
+  var kakaoBtn = document.getElementById('kakaoBtn');
+  if (kakaoBtn) {
+    kakaoBtn.addEventListener('click', function () {
+      copyText(document.getElementById('kakaoId').textContent.trim(), kakaoBtn, '복사됐습니다', 'ID 복사');
     });
   }
 
@@ -824,6 +848,5 @@ footer a:hover{color:var(--ink)}
 })();
 
 </script>
-
 </body>
 </html>

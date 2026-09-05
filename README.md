@@ -72,6 +72,7 @@ Netlify에서 이 저장소를 연결(Import from GitHub)하면 `netlify.toml` �
 |---|---|---|
 | `010-8366-8536` | 문의 전화번호 | index.html · privacy.html · 404.html · `main.js`의 `PHONE` 상수 |
 | `su000@hanmail.net` | 문의 이메일 | index.html · privacy.html |
+| `su000000` | 카카오톡 ID | index.html(연락처 카드·푸터) · privacy.html |
 | `신청 시 안내` | 수강료가 확정되면 금액으로 | index.html 교육 안내 표 |
 | `nwnubigo.github.io/cde_ai_edu` | 한글 도메인 연결 후 그 주소로 (퓨니코드: `xn--ai-he2iv73b8zdy2gupbu8y5pq9oj55i.xn--ok0b850bc9gv3i.com`) | index.html의 canonical·og:url·og:image, robots.txt, sitemap.xml, 404.html |
 | `<div class="hero-media">` 안의 `<img>` | 유튜브 업로드 후 `<iframe>` 임베드로 교체 가능 | index.html |

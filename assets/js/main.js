@@ -64,6 +64,14 @@
     });
   }
 
+  /* ---------- 카카오톡 ID 복사 ---------- */
+  var kakaoBtn = document.getElementById('kakaoBtn');
+  if (kakaoBtn) {
+    kakaoBtn.addEventListener('click', function () {
+      copyText(document.getElementById('kakaoId').textContent.trim(), kakaoBtn, '복사됐습니다', 'ID 복사');
+    });
+  }
+
   /* ---------- 신청 폼 ---------- */
   var form = document.getElementById('form');
   if (!form) return;

@@ -287,3 +287,11 @@ footer a:hover{color:var(--ink)}
 .doc th{background:var(--surface2);font-size:15px;color:var(--ink)}
 .doc .back{display:inline-block;margin-top:36px}
 .err-page{text-align:center;padding:100px 0}
+
+/* 카카오톡 ID */
+.kakao{border-top:1px solid var(--line);padding-top:16px;display:grid;gap:8px}
+.kakao-lbl{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.kakao-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.kakao-row b{font-family:var(--display);font-size:26px;font-weight:400;line-height:1.1;letter-spacing:.01em}
+.kakao-row .btn{min-height:44px;padding:0 16px;font-size:15px;width:auto;flex:none}
+.kakao .help{margin-top:-2px}
