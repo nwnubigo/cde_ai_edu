@@ -64,12 +64,32 @@
     });
   }
 
-  /* ---------- 카카오톡 ID 복사 ---------- */
+  /* ---------- 카카오톡 친구 추가 ----------
+     카카오톡은 "ID로 친구 추가"를 여는 공개 링크를 제공하지 않습니다.
+     그래서 ID를 클립보드에 복사한 뒤 앱만 열어주고, 붙여넣기는 사용자가 합니다.
+     PC에서는 앱이 없으므로 복사까지만 하고 안내 문구를 띄웁니다. */
   var kakaoBtn = document.getElementById('kakaoBtn');
   if (kakaoBtn) {
     kakaoBtn.addEventListener('click', function () {
-      copyText(document.getElementById('kakaoId').textContent.trim(), kakaoBtn, '복사됐습니다', 'ID 복사');
+      var id = document.getElementById('kakaoId').textContent.trim();
+      var msg = document.getElementById('kakaoMsg');
+      copyText(id, null, null, null);
+      if (msg) msg.classList.add('show');
+      if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        setTimeout(function () { location.href = 'kakaotalk://'; }, 250);
+      }
     });
+  }
+
+  /* ---------- 신청 폼이 보이면 하단 고정 버튼 감추기 ---------- */
+  var sticky = document.querySelector('.sticky');
+  var applySec = document.getElementById('apply');
+  if (sticky && applySec && 'IntersectionObserver' in window) {
+    // 신청 섹션은 화면보다 길어 비율 기준은 신뢰할 수 없다.
+    // 섹션이 화면 아래에서 120px 이상 올라오면 숨긴다.
+    new IntersectionObserver(function (entries) {
+      sticky.classList.toggle('hide', entries[0].isIntersecting);
+    }, { threshold: 0, rootMargin: '0px 0px -120px 0px' }).observe(applySec);
   }
 
   /* ---------- 신청 폼 ---------- */
@@ -142,6 +162,7 @@
 
   function copyText(text, btn, okLabel, backLabel) {
     var restore = function () {
+      if (!btn) return;
       btn.textContent = okLabel;
       setTimeout(function () { btn.textContent = backLabel; }, 2000);
     };

@@ -16,27 +16,31 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700&display=swap">
 <style>
 :root{
-  --bg:#F6F4EE; --surface:#FFFFFF; --surface2:#EEF0EA; --ink:#1E2433; --ink2:#4B5262; --muted:#7A8090;
-  --line:#DCDED6; --accent:#FFD84D; --accent-ink:#1E2433; --deep:#0E5A8A; --deep-soft:#E3EEF6;
+  --bg:#EAE3D6; --surface:#FFFFFF; --surface2:#F4F0E6; --ink:#1E2433; --ink2:#4B5262; --muted:#6E7484;
+  --line:#D3CBB9; --accent:#FFD84D; --accent-ink:#1E2433; --deep:#0E5A8A; --deep-soft:#DCEAF5;
   --ok:#2E7D5B; --shadow:0 10px 30px rgba(30,36,51,.10);
+  --panel-dark:#1E2433;
   --display:'Black Han Sans','Noto Sans KR',system-ui,sans-serif;
   --body:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#141822; --surface:#1C2231; --surface2:#232A3B; --ink:#EEF0F4; --ink2:#C3C8D3; --muted:#8C93A3;
-    --line:#2E3547; --accent:#FFD84D; --accent-ink:#1A1F2B; --deep:#7FB8E8; --deep-soft:#1E2E3F;
+    --bg:#0D1119; --surface:#1B2231; --surface2:#252D40; --ink:#EEF0F4; --ink2:#C3C8D3; --muted:#949BAB;
+    --line:#333B50; --accent:#FFD84D; --accent-ink:#1A1F2B; --deep:#7FB8E8; --deep-soft:#1E2E3F;
     --ok:#6CC49A; --shadow:0 10px 30px rgba(0,0,0,.35);
+  --panel-dark:#1A2130;
+    --panel-dark:#1A2130;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#141822; --surface:#1C2231; --surface2:#232A3B; --ink:#EEF0F4; --ink2:#C3C8D3; --muted:#8C93A3;
-  --line:#2E3547; --accent:#FFD84D; --accent-ink:#1A1F2B; --deep:#7FB8E8; --deep-soft:#1E2E3F;
+  --bg:#0D1119; --surface:#1B2231; --surface2:#252D40; --ink:#EEF0F4; --ink2:#C3C8D3; --muted:#949BAB;
+  --line:#333B50; --accent:#FFD84D; --accent-ink:#1A1F2B; --deep:#7FB8E8; --deep-soft:#1E2E3F;
   --ok:#6CC49A; --shadow:0 10px 30px rgba(0,0,0,.35);
+  --panel-dark:#1A2130;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:88px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:rgba(14,90,138,.12);padding-bottom:88px}
 @media (min-width:900px){body{padding-bottom:0}}
 h1,h2,h3{margin:0;line-height:1.25;text-wrap:balance;font-weight:700}
 h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,7vw,58px);letter-spacing:-.01em}
@@ -107,7 +111,7 @@ section{padding:64px 0}
 .timer small{font-family:var(--body);font-size:15px;font-weight:500;color:var(--muted);margin-left:6px}
 
 /* why */
-.why{background:var(--ink);color:#F3F4F7}
+.why{background:var(--panel-dark);color:#F3F4F7}
 .why .eyebrow{color:var(--accent)}
 .why h2{color:#fff}
 .why .lead{color:#C9CDD8}
@@ -312,6 +316,78 @@ footer a:hover{color:var(--ink)}
 .kakao-row b{font-family:var(--display);font-size:26px;font-weight:400;line-height:1.1;letter-spacing:.01em}
 .kakao-row .btn{min-height:44px;padding:0 16px;font-size:15px;width:auto;flex:none}
 .kakao .help{margin-top:-2px}
+
+/* ===== 스마트폰 최적화 ===== */
+
+/* 흰색 섹션이 바탕과 구분되도록 경계를 또렷하게 (폰 화면·야외 대비) */
+.pain, .info, .apply{box-shadow:0 1px 0 rgba(30,36,51,.04) inset}
+.ba-card, .lesson, .card-name, .step, .contact{border:1px solid var(--line)}
+.step{border:1px solid transparent}
+
+@media (max-width:899px){
+  /* 섹션마다 리듬이 생기도록 여백을 조금 더 */
+  section{padding:56px 0}
+  .wrap{padding:0 18px}
+
+  /* 위아래 경계선을 굵혀 흰 패널의 시작·끝이 보이게 */
+  .pain, .info, .apply{border-top:2px solid var(--line);border-bottom:2px solid var(--line)}
+
+  /* 카드가 바탕 위에 떠 보이도록 */
+  .ba-card, .lesson, .card-name, .step, .contact, .bubble{box-shadow:0 2px 8px rgba(30,36,51,.05)}
+  .step{border-color:var(--line)}
+
+  /* 세로로 쌓이므로 화살표도 아래를 향하게 */
+  .ba-arrow{transform:rotate(90deg);font-size:30px;padding:2px 0}
+
+  /* 제목·본문 크기 손보기 */
+  .lead{font-size:19px}
+  .bubble{font-size:20px}
+  .eyebrow{font-size:13px}
+
+  /* 교육 안내 표: 라벨 폭을 줄여 값이 넉넉하게 */
+  .infogrid div{grid-template-columns:74px 1fr;gap:10px;padding:16px 18px}
+  .infogrid dd{font-size:16px}
+
+  /* 강사 이력: 날짜 열 축소 */
+  .hist div{grid-template-columns:66px 1fr;gap:10px}
+
+  /* 커리큘럼 회차 번호 */
+  .lesson{padding:18px 18px}
+  .lesson .n{min-width:44px;font-size:25px}
+  .lesson ul{font-size:15px;padding-left:16px}
+
+  /* 손가락으로 누르기 쉽게 */
+  details summary{padding:20px 0;min-height:56px}
+  .nav a{min-height:52px;display:flex;align-items:center}
+  .certs li{padding:6px 12px}
+}
+
+/* 아주 좁은 화면(갤럭시 구형 등) */
+@media (max-width:360px){
+  body{font-size:17px}
+  .wrap{padding:0 15px}
+  .infogrid div{grid-template-columns:1fr;gap:2px}
+  .infogrid dt{padding-top:0}
+  .btn{padding:0 18px;font-size:17px}
+}
+
+/* 신청 폼이 화면에 들어오면 하단 고정 버튼을 숨겨 폼을 가리지 않게 */
+.sticky{transition:transform .25s ease,opacity .25s ease}
+.sticky.hide{transform:translateY(120%);opacity:0;pointer-events:none}
+@media (prefers-reduced-motion:reduce){.sticky{transition:none}}
+
+/* ===== 카카오톡 친구 추가 ===== */
+.kakao{border-top:1px solid var(--line);padding-top:18px;display:grid;gap:10px}
+.kakao-lbl{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.kakao-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.kakao-row b{font-family:var(--display);font-size:28px;font-weight:400;line-height:1.1;letter-spacing:.02em;
+  background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:4px 14px}
+.kakao .btn{width:100%}
+.kakao-steps{margin:2px 0 0;padding-left:20px;display:grid;gap:4px;font-size:15px;color:var(--ink2)}
+.kakao-steps li{margin:0}
+.kakao-steps b{color:var(--ink)}
+.kakao-msg{font-size:15px;font-weight:700;color:var(--ok);display:none}
+.kakao-msg.show{display:block}
 
 </style>
 </head>
@@ -594,12 +670,20 @@ footer a:hover{color:var(--ink)}
         <a class="btn btn-ghost" href="sms:010-8366-8536?body=소상공인 AI 교육 문의드립니다.">문자 보내기</a>
         <a class="btn btn-ghost" href="mailto:su000@hanmail.net?subject=소상공인 AI 홍보마케팅 교육 문의">이메일 보내기</a>
         <div class="kakao">
-          <span class="kakao-lbl">카카오톡 ID</span>
+          <span class="kakao-lbl">카카오톡 친구 추가</span>
           <div class="kakao-row">
             <b id="kakaoId">su000000</b>
-            <button class="btn btn-ghost" type="button" id="kakaoBtn">ID 복사</button>
           </div>
-          <p class="help">카카오톡 → 친구 추가 → <b>ID로 추가</b>에서 검색해 주세요.</p>
+          <button class="btn btn-ghost" type="button" id="kakaoBtn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.9 3 2.8 6.3 2.8 10.3c0 2.6 1.7 4.8 4.3 6.1-.2.7-.7 2.5-.8 2.9-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.5.1 1.1.1 1.6.1 5.1 0 9.2-3.3 9.2-7.3S17.1 3 12 3z"/></svg>
+            ID 복사 후 카톡 열기
+          </button>
+          <p class="kakao-msg" id="kakaoMsg" role="status">ID가 복사됐습니다. 카카오톡에서 붙여넣어 주세요.</p>
+          <ol class="kakao-steps">
+            <li>카카오톡 <b>친구</b> 탭 → 오른쪽 위 <b>사람+</b> 아이콘</li>
+            <li><b>ID로 추가</b> 선택</li>
+            <li>복사된 <b>su000000</b> 붙여넣기 → 친구 추가</li>
+          </ol>
         </div>
         <p class="help">교육이 끝난 뒤에도 단톡방에서 계속 질문하실 수 있습니다.</p>
       </aside>
@@ -658,7 +742,7 @@ footer a:hover{color:var(--ink)}
     <ul>
       <li>담당: 남원AI연구회 조수영</li>
       <li>전화: <a href="tel:010-8366-8536">010-8366-8536</a></li>
-      <li>카카오톡 ID: su000000</li>
+      <li>카카오톡 ID: su000000 (친구 탭 → 사람+ → ID로 추가)</li>
       <li>이메일: <a href="mailto:su000@hanmail.net">su000@hanmail.net</a></li>
     </ul>
 
@@ -747,12 +831,32 @@ footer a:hover{color:var(--ink)}
     });
   }
 
-  /* ---------- 카카오톡 ID 복사 ---------- */
+  /* ---------- 카카오톡 친구 추가 ----------
+     카카오톡은 "ID로 친구 추가"를 여는 공개 링크를 제공하지 않습니다.
+     그래서 ID를 클립보드에 복사한 뒤 앱만 열어주고, 붙여넣기는 사용자가 합니다.
+     PC에서는 앱이 없으므로 복사까지만 하고 안내 문구를 띄웁니다. */
   var kakaoBtn = document.getElementById('kakaoBtn');
   if (kakaoBtn) {
     kakaoBtn.addEventListener('click', function () {
-      copyText(document.getElementById('kakaoId').textContent.trim(), kakaoBtn, '복사됐습니다', 'ID 복사');
+      var id = document.getElementById('kakaoId').textContent.trim();
+      var msg = document.getElementById('kakaoMsg');
+      copyText(id, null, null, null);
+      if (msg) msg.classList.add('show');
+      if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        setTimeout(function () { location.href = 'kakaotalk://'; }, 250);
+      }
     });
+  }
+
+  /* ---------- 신청 폼이 보이면 하단 고정 버튼 감추기 ---------- */
+  var sticky = document.querySelector('.sticky');
+  var applySec = document.getElementById('apply');
+  if (sticky && applySec && 'IntersectionObserver' in window) {
+    // 신청 섹션은 화면보다 길어 비율 기준은 신뢰할 수 없다.
+    // 섹션이 화면 아래에서 120px 이상 올라오면 숨긴다.
+    new IntersectionObserver(function (entries) {
+      sticky.classList.toggle('hide', entries[0].isIntersecting);
+    }, { threshold: 0, rootMargin: '0px 0px -120px 0px' }).observe(applySec);
   }
 
   /* ---------- 신청 폼 ---------- */
@@ -825,6 +929,7 @@ footer a:hover{color:var(--ink)}
 
   function copyText(text, btn, okLabel, backLabel) {
     var restore = function () {
+      if (!btn) return;
       btn.textContent = okLabel;
       setTimeout(function () { btn.textContent = backLabel; }, 2000);
     };
